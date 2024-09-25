@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Puntos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Registro de puntos Equipos A y B</h1>
+
+    <h3>Equipo A</h3>
+    <form>
+        <label for="handball-a">Puntos Handball:</label>
+        <input type="number" id="handball-a" name="handball">
+
+        <label for="resistencia-a">Puntos Resistencia:</label>
+        <input type="number" id="resistencia-a" name="resistencia">
+
+        <label for="ajedrez-a">Puntos Ajedrez:</label>
+        <input type="number" id="ajedrez-a" name="ajedrez">
+
+        <button onclick="agregarPuntos('Equipo A')">Agregar Puntos Equipo A</button>
+    </form>
+    <br>
+    <h3>Equipo B</h3>
+    <form>
+        <label for="handball-b">Puntos Handball:</label>
+        <input type="number" id="handball-b" name="handball">
+
+        <label for="resistencia-b">Puntos Resistencia:</label>
+        <input type="number" id="resistencia-b" name="resistencia">
+
+        <label for="ajedrez-b">Puntos Ajedrez:</label>
+        <input type="number" id="ajedrez-b" name="ajedrez">
+
+        <button onclick="agregarPuntos('Equipo B')">Agregar Puntos Equipo B</button>
+    </form>
+    <br>
+    <div>
+        <button onclick="mostrarResultados()">Mostrar Resultados</button>
+        <p id="resultados"></p>
+    </div>
+</body>
+</html>
