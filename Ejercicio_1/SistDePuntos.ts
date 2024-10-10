@@ -4,11 +4,11 @@ interface puntos{
 
 let EquipoA : puntos = {
     punto: 0
-}
+};
 
 let EquipoB : puntos = {
     punto: 0
-}
+};
 
 const Handball_EquipoA = document.getElementById('handball-a') as HTMLInputElement;
 const Ajedrez_EquipoA = document.getElementById('ajedrez-a') as HTMLInputElement;
