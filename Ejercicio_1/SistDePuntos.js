@@ -1,33 +1,37 @@
-var EquipoA = {
-    punto: 0
-};
-var EquipoB = {
-    punto: 0
-};
+var EquipoA = { punto: 0 };
+var EquipoB = { punto: 0 };
 var Handball_EquipoA = document.getElementById('handball-a');
 var Ajedrez_EquipoA = document.getElementById('ajedrez-a');
 var Resistencia_EquipoA = document.getElementById('resistencia-a');
-var Handball_EquipoB = document.getElementById('handbal-b');
+var Handball_EquipoB = document.getElementById('handball-b');
 var Ajedrez_EquipoB = document.getElementById('ajedrez-b');
 var Resistencia_EquipoB = document.getElementById('resistencia-b');
-var OutputPuntosA = document.getElementById('resultados');
-var OutputPuntosB = document.getElementById('resultados');
-var EquipoGanador = document.getElementById('resultados');
-function contar() {
-    var valor_handball_A = parseInt(Handball_EquipoA.value, 10);
-    var valor_ajedrez_A = parseInt(Ajedrez_EquipoA.value, 10);
-    var valor_resistencia_A = parseInt(Resistencia_EquipoA.value, 10);
-    var valor_handball_B = parseInt(Handball_EquipoB.value, 10);
-    var valor_ajedrez_B = parseInt(Ajedrez_EquipoB.value, 10);
-    var valor_resistencia_B = parseInt(Resistencia_EquipoB.value, 10);
-    EquipoA.punto += valor_ajedrez_A + valor_handball_A + valor_resistencia_A;
-    EquipoB.punto += valor_ajedrez_B + valor_handball_B + valor_resistencia_B;
-    OutputPuntosA.innerText += EquipoA.punto.toString();
-    OutputPuntosB.innerText += EquipoB.punto.toString();
-    if (EquipoA.punto > EquipoB.punto) {
-        EquipoGanador.innerText += 'Equipo A';
+var OutputResultado = document.getElementById('resultado');
+function agregarPuntos(equipo) {
+    if (equipo === "Equipo A") {
+        var puntosHandball = parseInt(Handball_EquipoA.value, 10) || 0;
+        var puntosAjedrez = parseInt(Ajedrez_EquipoA.value, 10) || 0;
+        var puntosResistencia = parseInt(Resistencia_EquipoA.value, 10) || 0;
+        EquipoA.punto += puntosHandball + puntosAjedrez + puntosResistencia;
     }
-    if (EquipoA.punto < EquipoB.punto) {
-        EquipoGanador.innerText += 'Equipo B';
+    else if (equipo === "Equipo B") {
+        var puntosHandball = parseInt(Handball_EquipoB.value, 10) || 0;
+        var puntosAjedrez = parseInt(Ajedrez_EquipoB.value, 10) || 0;
+        var puntosResistencia = parseInt(Resistencia_EquipoB.value, 10) || 0;
+        EquipoB.punto += puntosHandball + puntosAjedrez + puntosResistencia;
+    }
+}
+function mostrarResultados() {
+    if (OutputResultado) {
+        OutputResultado.innerHTML = "\n            Puntos Totales:<br>\n            Equipo A: ".concat(EquipoA.punto, " <br>\n            Equipo B: ").concat(EquipoB.punto, " <br>\n        ");
+        if (EquipoA.punto > EquipoB.punto) {
+            OutputResultado.innerHTML += "¡Equipo A está ganando!";
+        }
+        else if (EquipoA.punto < EquipoB.punto) {
+            OutputResultado.innerHTML += "¡Equipo B está ganando!";
+        }
+        else {
+            OutputResultado.innerHTML += "¡Es un empate!";
+        }
     }
 }
