@@ -25,13 +25,13 @@ function mostrarResultados() {
     if (OutputResultado) {
         OutputResultado.innerHTML = "\n            Puntos Totales:<br>\n            EquipoA: ".concat(EquipoA.punto, " <br>\n            EquipoB: ").concat(EquipoB.punto, " <br>\n        ");
         if (EquipoA.punto > EquipoB.punto) {
-            OutputResultado.innerHTML += "¡Equipo A está ganando!";
+            OutputResultado.innerHTML += "¡El Equipo A es el ganador :)!";
         }
         else if (EquipoA.punto < EquipoB.punto) {
-            OutputResultado.innerHTML += "¡Equipo B está ganando!";
+            OutputResultado.innerHTML += "¡El Equipo B es el ganador :)!";
         }
         else {
-            OutputResultado.innerHTML += "¡Es un empate!";
+            OutputResultado.innerHTML += "¡Es un empate! ;(";
         }
     }
 }
