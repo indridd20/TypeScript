@@ -12,13 +12,13 @@ const Resistencia_EquipoB = document.getElementById('resistencia-b') as HTMLInpu
 const OutputResultado = document.getElementById('resultado') as HTMLParagraphElement;
 
 function agregarPuntos(equipo: string) {
-    if (equipo === "Equipo A") {
+    if (equipo === "EquipoA") {
         const puntosHandball = parseInt(Handball_EquipoA.value, 10) || 0;
         const puntosAjedrez = parseInt(Ajedrez_EquipoA.value, 10) || 0;
         const puntosResistencia = parseInt(Resistencia_EquipoA.value, 10) || 0;
 
         EquipoA.punto += puntosHandball + puntosAjedrez + puntosResistencia;
-    } else if (equipo === "Equipo B") {
+    } else if (equipo === "EquipoB") {
         const puntosHandball = parseInt(Handball_EquipoB.value, 10) || 0;
         const puntosAjedrez = parseInt(Ajedrez_EquipoB.value, 10) || 0;
         const puntosResistencia = parseInt(Resistencia_EquipoB.value, 10) || 0;
@@ -32,8 +32,8 @@ function mostrarResultados() {
     if (OutputResultado) {
         OutputResultado.innerHTML = `
             Puntos Totales:<br>
-            Equipo A: ${EquipoA.punto} <br>
-            Equipo B: ${EquipoB.punto} <br>
+            EquipoA: ${EquipoA.punto} <br>
+            EquipoB: ${EquipoB.punto} <br>
         `;
 
         if (EquipoA.punto > EquipoB.punto) {

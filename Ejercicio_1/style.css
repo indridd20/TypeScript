@@ -43,3 +43,12 @@ button {
 button:hover {
     background-color: #700000;
 }
+
+#mResultados {
+    margin-bottom: 40px;
+    border: 1px solid #8B0000;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

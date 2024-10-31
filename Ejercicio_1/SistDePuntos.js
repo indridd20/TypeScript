@@ -8,13 +8,13 @@ var Ajedrez_EquipoB = document.getElementById('ajedrez-b');
 var Resistencia_EquipoB = document.getElementById('resistencia-b');
 var OutputResultado = document.getElementById('resultado');
 function agregarPuntos(equipo) {
-    if (equipo === "Equipo A") {
+    if (equipo === "EquipoA") {
         var puntosHandball = parseInt(Handball_EquipoA.value, 10) || 0;
         var puntosAjedrez = parseInt(Ajedrez_EquipoA.value, 10) || 0;
         var puntosResistencia = parseInt(Resistencia_EquipoA.value, 10) || 0;
         EquipoA.punto += puntosHandball + puntosAjedrez + puntosResistencia;
     }
-    else if (equipo === "Equipo B") {
+    else if (equipo === "EquipoB") {
         var puntosHandball = parseInt(Handball_EquipoB.value, 10) || 0;
         var puntosAjedrez = parseInt(Ajedrez_EquipoB.value, 10) || 0;
         var puntosResistencia = parseInt(Resistencia_EquipoB.value, 10) || 0;
@@ -23,7 +23,7 @@ function agregarPuntos(equipo) {
 }
 function mostrarResultados() {
     if (OutputResultado) {
-        OutputResultado.innerHTML = "\n            Puntos Totales:<br>\n            Equipo A: ".concat(EquipoA.punto, " <br>\n            Equipo B: ").concat(EquipoB.punto, " <br>\n        ");
+        OutputResultado.innerHTML = "\n            Puntos Totales:<br>\n            EquipoA: ".concat(EquipoA.punto, " <br>\n            EquipoB: ").concat(EquipoB.punto, " <br>\n        ");
         if (EquipoA.punto > EquipoB.punto) {
             OutputResultado.innerHTML += "¡Equipo A está ganando!";
         }
