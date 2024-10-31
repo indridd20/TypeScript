@@ -11,7 +11,7 @@ const Resistencia_EquipoB = document.getElementById('resistencia-b') as HTMLInpu
 
 const OutputResultado = document.getElementById('resultado') as HTMLParagraphElement;
 
-function agregarPuntos(equipo: string): void {
+function agregarPuntos(equipo: string) {
     if (equipo === "Equipo A") {
         const puntosHandball = parseInt(Handball_EquipoA.value, 10) || 0;
         const puntosAjedrez = parseInt(Ajedrez_EquipoA.value, 10) || 0;
@@ -28,7 +28,7 @@ function agregarPuntos(equipo: string): void {
 
 }
 
-function mostrarResultados(): void {
+function mostrarResultados() {
     if (OutputResultado) {
         OutputResultado.innerHTML = `
             Puntos Totales:<br>
